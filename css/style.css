@@ -1,0 +1,487 @@
+.header .shell:after,
+.nav ul:after { content: ''; display: table; clear: both; line-height: 0; }
+
+.chevron-right-green { background-image: url(images/sprite.png); background-position: -26px -30px; width: 7px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-bubble { background-image: url(images/sprite.png); background-position: 0 -30px; width: 22px; height: 23px; display: inline-block; vertical-align: middle; font-size: 0; }
+.ico-share { background-image: url(images/sprite.png); background-position: 0 -57px; width: 21px; height: 24px; display: inline-block; vertical-align: middle; font-size: 0; }
+.logo-image { background-image: url(images/sprite.png); background-position: 0 0; width: 170px; height: 26px; display: inline-block; vertical-align: middle; font-size: 0; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.chevron-right-green { background-image: url(images/sprite.@2x.png); background-position: -24px -28px; background-size: 170px 77px; width: 7px; height: 12px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-bubble { background-image: url(images/sprite.@2x.png); background-position: 0 -28px; background-size: 170px 77px; width: 22px; height: 23px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.ico-share { background-image: url(images/sprite.@2x.png); background-position: 0 -53px; background-size: 170px 77px; width: 21px; height: 24px; display: inline-block; vertical-align: middle; font-size: 0; }
+	.logo-image { background-image: url(images/sprite.@2x.png); background-position: 0 0; background-size: 170px 77px; width: 170px; height: 26px; display: inline-block; vertical-align: middle; font-size: 0; }
+}
+
+/* ------------------------------------------------------------ *\
+	I.   Generic
+\* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ *\
+	Reset
+\* ------------------------------------------------------------ */
+
+*,
+*:before,
+*:after { padding: 0; margin: 0; outline: 0; box-sizing: border-box; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, main { display: block; }
+
+html,
+body { height: 100%; }
+
+html { tap-highlight-color: rgba(0,0,0,0); }
+
+body { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; text-size-adjust: none; }
+
+img, iframe, video, audio, object { max-width: 100%; }
+
+img { height: auto; display: inline-block; vertical-align: middle; }
+
+b,
+strong { font-weight: bold; }
+
+address { font-style: normal; }
+
+svg:not(:root) { overflow: hidden; }
+
+a,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="file"],
+input[type="image"],
+label[for] { cursor: pointer; }
+
+a[href^="tel"],
+button[disabled],
+input[disabled],
+textarea[disabled],
+select[disabled] { cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { padding: 0; border: 0; }
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea,
+a[href^="tel"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { display: none; -webkit-appearance: none; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+textarea { overflow: auto; resize: none; -webkit-overflow-scrolling: touch; overflow-scrolling: touch; }
+
+button,
+input,
+optgroup,
+select,
+textarea { font-family: inherit; font-size: inherit; color: inherit; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; }
+
+button,
+select { text-transform: none; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+nav ul,
+nav ol { list-style: none outside none; }
+
+/* ------------------------------------------------------------ *\
+	Fonts
+\* ------------------------------------------------------------ */
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/avenir_lt_35_light-webfont.eot');
+    src: url('fonts/avenir_lt_35_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/avenir_lt_35_light-webfont.woff') format('woff'),
+         url('fonts/avenir_lt_35_light-webfont.ttf') format('truetype'),
+         url('fonts/avenir_lt_35_light-webfont.svg#avenir_lt_35_lightregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('fonts/avenir_lt_55_roman-webfont.eot');
+    src: url('fonts/avenir_lt_55_roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/avenir_lt_55_roman-webfont.woff') format('woff'),
+         url('fonts/avenir_lt_55_roman-webfont.ttf') format('truetype'),
+         url('fonts/avenir_lt_55_roman-webfont.svg#avenir_lt_55_romanregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ------------------------------------------------------------ *\
+	Base
+\* ------------------------------------------------------------ */
+
+body { min-width: 320px; background: #f4f4f4; font-family: 'Avenir', sans-serif; font-size: 16px; line-height: 1.85; color: #000; }
+
+a { color: inherit; text-decoration: underline; }
+a:hover { text-decoration: none; }
+
+a[href^="tel"] { text-decoration: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { margin-bottom: 0.925em; line-height: 1.2; font-weight: normal; }
+
+h1 { font-size: 45px; line-height: 1.35; font-weight: 300; letter-spacing: .06em; }
+h2 { font-size: 26px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote { margin-bottom: 1.85em; }
+
+h1[class],
+h2[class],
+h3[class],
+h4[class],
+h5[class],
+h6[class],
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child,
+ul:last-child,
+ol:last-child,
+dl:last-child,
+table:last-child,
+blockquote:last-child { margin-bottom: 0; }
+
+
+@media (max-width: 1023px) {
+	h1 { font-size: 35px; }
+}
+
+/* ------------------------------------------------------------ *\
+	Helpers
+\* ------------------------------------------------------------ */
+
+/*  Clear  */
+
+.clear:after { content: ''; line-height: 0; display: table; clear: both; }
+
+
+/*  Notext  */
+
+.notext { white-space: nowrap; text-indent: 100%; text-shadow: none; overflow: hidden; }
+.notext-old { font-size: 0; line-height: 0; text-indent: -4000px; }
+
+
+/*  Hidden  */
+
+[hidden],
+.hidden { display: none; }
+
+
+/*  Alignleft  */
+
+.alignleft { float: left; }
+
+/*  Alignright  */
+
+.alignright { float: right; }
+
+/*  Disabled  */
+
+[disabled],
+.disabled { cursor: default; }
+
+/* Mobile Above */
+
+@media (min-width: 768px) {
+	.desktop-hidden { display: none !important; }
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+	.mobile-hidden { display: none !important; }
+}
+
+/* ------------------------------------------------------------ *\
+	II.  Regions
+\* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ *\
+	Wrapper
+\* ------------------------------------------------------------ */
+
+.wrapper { overflow: hidden; }
+
+/* ------------------------------------------------------------ *\
+	Container
+\* ------------------------------------------------------------ */
+
+.container {}
+
+/* ------------------------------------------------------------ *\
+	Shell
+\* ------------------------------------------------------------ */
+
+.shell { max-width: 997px; padding: 0 15px; margin: auto; }
+
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header { position: absolute; top: 0; left: 0; z-index: 5; width: 100%; color: #fff; }
+.header .shell:after { }
+.header .nav { float: right; padding: 45px 20px 0 0; }
+
+@media (max-width: 767px) {
+	.header .nav { padding: 15px 15px 0 0; }
+}
+
+/* ------------------------------------------------------------ *\
+	Main
+\* ------------------------------------------------------------ */
+
+.main { padding: 60px 0 58px; }
+
+@media (max-width: 767px) {
+	.main { padding: 0; }
+}
+
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+.footer { padding: 50px 0; background: #012c3a; color: #fff; }
+
+/* ------------------------------------------------------------ *\
+	Content
+\* ------------------------------------------------------------ */
+
+.content {}
+
+/* ------------------------------------------------------------ *\
+	Sidebar
+\* ------------------------------------------------------------ */
+
+.sidebar {}
+
+/* ------------------------------------------------------------ *\
+	III. Themes
+\* ------------------------------------------------------------ */
+
+
+
+/* ------------------------------------------------------------ *\
+	IV.  Modules
+\* ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn { display: inline-block; vertical-align: middle; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+/* ------------------------------------------------------------ *\
+	Copyright
+\* ------------------------------------------------------------ */
+
+.copyright { font-size: 12px; text-align: center; letter-spacing: .1em; }
+
+/* ------------------------------------------------------------ *\
+	Form Elements
+\* ------------------------------------------------------------ */
+
+input::-webkit-input-placeholder { color: inherit; opacity: 1; }
+
+input::-moz-placeholder { color: inherit; opacity: 1; }
+
+input:-ms-input-placeholder { color: inherit; opacity: 1; }
+
+input::placeholder { color: inherit; opacity: 1; }
+textarea::-webkit-input-placeholder { color: inherit; opacity: 1; }
+textarea::-moz-placeholder { color: inherit; opacity: 1; }
+textarea:-ms-input-placeholder { color: inherit; opacity: 1; }
+textarea::placeholder { color: inherit; opacity: 1; }
+
+input:-webkit-autofill { -webkit-text-fill-color: inherit !important; -webkit-box-shadow: 0 0 0 1000px #fff inset; }
+
+.field {}
+.textarea {}
+.select {}
+.radio {}
+.checkbox {}
+
+/* ------------------------------------------------------------ *\
+	Form
+\* ------------------------------------------------------------ */
+
+.form {}
+
+/* ------------------------------------------------------------ *\
+	Intro
+\* ------------------------------------------------------------ */
+
+.intro { position: relative; padding: 40px 0 75px; background: url(images/intro-bg.jpg) 50% 50% no-repeat; background-size: cover; color: #fff; text-align: center; }
+.intro:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;  background: url(images/pattern.png) 0 0 repeat; background-size: 9px 9px; }
+.intro .intro-image { padding-bottom: 71px;  }
+
+.intro .logo { display: inline-block; margin-bottom: 58px;  }
+
+
+@media (max-width: 767px) {
+	.intro { padding: 60px 0 30px; }
+	.intro .intro-image { width: 200px; padding-bottom: 30px; margin: 0 auto; }
+	.intro .logo { margin-bottom: 30px; }
+}
+
+/* ------------------------------------------------------------ *\
+	List
+\* ------------------------------------------------------------ */
+
+[class^="list-"] { list-style: none outside none; }
+
+/* ------------------------------------------------------------ *\
+	List Arrows
+\* ------------------------------------------------------------ */
+
+.list-arrows { list-style: none outside none; }
+.list-arrows li { position: relative; padding: 0 0 11px 25px; }
+.list-arrows li:before { content: ''; position: absolute; top: 9px; left: 0; width: 7px; height: 12px; background-image: url(images/sprite.png); background-position: -26px -30px; }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.list-arrows li:before { background-image: url(images/sprite.@2x.png); background-position: -24px -28px; background-size: 170px 77px; }
+}
+
+/* ------------------------------------------------------------ *\
+	Logo
+\* ------------------------------------------------------------ */
+
+.logo {}
+
+/* ------------------------------------------------------------ *\
+	Nav
+\* ------------------------------------------------------------ */
+
+.nav { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
+.nav ul { list-style: none outside none; }
+.nav ul:after { }
+.nav li { float: left; }
+.nav li + li { padding-left: 38px; }
+.nav a { text-decoration: none; }
+
+/* ------------------------------------------------------------ *\
+	Section
+\* ------------------------------------------------------------ */
+
+.section {}
+
+/* ------------------------------------------------------------ *\
+	Section Service
+\* ------------------------------------------------------------ */
+
+.section-services { padding: 123px 0 80px; }
+
+@media (max-width: 767px) {
+	.section-services { padding: 25px 0; }
+}
+
+/* ------------------------------------------------------------ *\
+	Section Feature
+\* ------------------------------------------------------------ */
+
+.section-feature { position: relative; padding: 25px 0; text-align: center; }
+.section-feature .section-body { font-size: 0; }
+.section-feature .section-image { display: inline-block; width: 673px; margin: 0 -95px; vertical-align: middle; }
+.section-feature .section-content { display: inline-block; width: 50%; vertical-align: middle; font-size: 16px; }
+.section-feature .section-content h1 { margin-bottom: 38px; }
+.section-feature .section-content .list-arrows { padding-left: 107px; text-align: left; }
+
+.section-feature-alt { padding: 72px 0 200px; }
+.section-feature-alt .section-image { position: absolute; right: 50%; top: 0; width: 1230px; margin-right: -160px; }
+.section-feature-alt .section-content { margin-left: auto; display: block; width: 520px; }
+.section-feature-alt .section-content h1 { margin-bottom: 83px; }
+
+@media (max-width: 1023px) {
+	.section-feature .section-image { width: 50%; margin: 0; }
+	.section-feature .section-content p br { display: none; }
+
+	.section-feature-alt .section-image  { width: 1000px; }
+}
+
+@media (max-width: 767px) {
+	.section-feature .section-image { display: block; width: auto; }
+	.section-feature .section-content { display: block; width: auto; }
+	.section-feature .section-content h1 { margin-bottom: 15px; }
+
+	.section-feature .section-content .list-arrows { padding-left: 0; }
+	
+	.section-feature-alt { overflow: hidden; padding: 300px 0 25px; }
+	.section-feature-alt .section-image  { position: absolute; top: -200px; right: 50%; margin: 0; width: 1000px; margin-right: -285px; }
+}
+
+/* ------------------------------------------------------------ *\
+	Service
+\* ------------------------------------------------------------ */
+
+.services { margin: 0 -110px; font-size: 0; text-align: center; }
+.service { display: inline-block; vertical-align: top; width: 220px; margin: 20px 110px; font-size: 14px; text-align: center; }
+.service .service-title { margin-bottom: 12px; color: #000; }
+.service .service-entry { margin-bottom: 8px; color: #959595; line-height: 1.6; }
+.service .service-icon { height: 30px; margin-bottom: 6px; }
+.service .service-actions { color: #55d2c2; }
+.service .service-actions a { text-decoration: none; }
+.service .service-actions a i { position: relative; top: -1px; margin-left: 2px; }
+
+@media (max-width: 1023px) {
+	.services { margin: 0 -50px; }
+	.service { margin: 20px 50px; }
+}
+
+/* ------------------------------------------------------------ *\
+	Slider
+\* ------------------------------------------------------------ */
+
+.slider {}
+
+.slider .slides { list-style: none outside none; }
+
+/* ------------------------------------------------------------ *\
+	Table
+\* ------------------------------------------------------------ */
+
+.table {}
+
+/* ------------------------------------------------------------ *\
+	Widget
+\* ------------------------------------------------------------ */
+
+.widgets { list-style: none outside none; }
