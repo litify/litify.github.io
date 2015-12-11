@@ -1,0 +1,18 @@
+ /* ------------------------------------------------------------ *\
+  Splash Background
+\* ------------------------------------------------------------ */
+
+.section-popup-downoload-background { position: fixed; top: 0; left: 0; width: 100%; min-height: 100%;  z-index: 999; opacity: 0; visibility: hidden; transition: 500ms; }
+.force-loaded .section-popup-downoload-background { transition: none; }
+
+.show-splash .section-popup-downoload-background { opacity: 1; visibility: visible; }
+
+
+.show-add-helper,
+.show-add-helper .wrapper { overflow: hidden; height: 100%; }
+.show-add-helper .section-popup-downoload-ios { display: block; }
+.show-add-helper .wrapper,
+.show-splash .wrapper { opacity: 0; }
+
+.loaded .section-popup-downoload-background { opacity: 0; visibility: hidden; }
+.loaded .wrapper { opacity: 1; }
